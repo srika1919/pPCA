@@ -1,0 +1,15 @@
+useDynLib(pPCA, .registration=TRUE)
+
+importFrom(Rcpp, evalCpp)
+
+
+importFrom("stats", "sd")
+
+importFrom("Matrix","sparseMatrix","crossprod","colMeans")
+importClassesFrom("Matrix", "dgeMatrix", "dgCMatrix")
+importFrom("methods", "as","is")
+importFrom("RSpectra","svds");
+
+export(pPCA)
+
+
