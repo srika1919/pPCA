@@ -51,7 +51,7 @@
 
 #'
 #' @examples
-#' \dontrun{
+#' \donttest{
 #' library(Matrix)
 #' set.seed(20190329)
 #' m <- rsparsematrix(50,100,density = 0.35)

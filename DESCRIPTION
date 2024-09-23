@@ -19,4 +19,4 @@ Imports: Matrix (>= 1.1-0), Rcpp (>= 0.11.5)
 LinkingTo: Rcpp
 NeedsCompilation: yes
 Suggests: ggbiplot
-RoxygenNote: 7.3.1
+RoxygenNote: 7.3.2
