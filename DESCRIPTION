@@ -11,7 +11,7 @@ Maintainer: Srika Raja <sri1919@iastate.edu>
 Description: Performs partial principal component analysis of a large sparse matrix. 
   The matrix may be stored as a list of matrices to be concatenated (implicitly) horizontally.
   Useful application includes cases where the number of total nonzero entries exceed the capacity of 
-  32 bit integers (e.g., with large SNP data).
+  32 bit integers (e.g., with large Single Nucleotide Polymorphisms data).
 License: GPL-3
 Encoding: UTF-8
 Depends: R (>= 3.0.2), methods, RSpectra (>= 0.16-1)
