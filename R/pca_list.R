@@ -83,7 +83,7 @@ pca_list <- function(lm, rank, retX = TRUE, scale. = TRUE, sd.tol = 1e-5){
 
   sv <- svds(A = Afun,k = rank,nu = 0,nv = rank,Atrans = Atrans,dim = c(n,p),
              args = list(X=lm,cns=cns,p=p),
-             opts = list(center = cm,scale =sqrt(n-1)*sc))
+             opts = list(center = cm,scale =sc))
 
   # Ensure first row of v is positive
   for(ii in 1:ncol(sv$v))
