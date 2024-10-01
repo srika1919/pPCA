@@ -51,7 +51,7 @@
 
 #'
 #' @examples
-#' \donttest{
+#'
 #' library(Matrix)
 #' set.seed(20190329)
 #' m <- rsparsematrix(50,100,density = 0.35)
@@ -62,7 +62,7 @@
 #' result <- pPCA(data, rank = 3)
 #' print(result)
 #' biplot(result)
-#' }
+#'
 #'
 
 pPCA <- function(x, rank, retX = TRUE, scale. = TRUE, sd.tol = 1e-5) {
