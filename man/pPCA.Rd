@@ -51,7 +51,7 @@ The partial SVD is computed through the RSpectra package. All elements in the fi
 matrix are positive.
 }
 \examples{
-\donttest{
+
 library(Matrix)
 set.seed(20190329)
 m <- rsparsematrix(50,100,density = 0.35)
@@ -62,7 +62,7 @@ data <- list(rsparsematrix(nrow = 50,ncol = 10,density = 0.35),
 result <- pPCA(data, rank = 3)
 print(result)
 biplot(result)
-}
+
 
 }
 \references{
