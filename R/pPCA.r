@@ -56,7 +56,7 @@
 #' set.seed(20190329)
 #' m <- rsparsematrix(50,100,density = 0.35)
 #' results <- pPCA(m, rank = 2)
-#' biplot(result)
+#' biplot(results)
 #' data <- list(rsparsematrix(nrow = 50,ncol = 10,density = 0.35),
 #'              rsparsematrix(nrow = 50,ncol = 40,density = 0.35)) # Using a list of matrices
 #' result <- pPCA(data, rank = 3)
