@@ -10,6 +10,7 @@ importClassesFrom("Matrix", "dgeMatrix", "dgCMatrix")
 importFrom("methods", "as","is")
 importFrom("RSpectra","svds");
 
+S3method(print, pPCA)
 export(pPCA)
 
 

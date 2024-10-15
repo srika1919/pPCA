@@ -14,6 +14,7 @@
 #' @param retX A logical value indicating whether the rotated variables (PC scores) should be returned.
 #' @param scale. A logical value indicating whether the variables should be scaled to have
 #' unit variance before the analysis takes place.
+#' @param normalize A logical value indicating whether the principal component scores should be normalized.
 #' @param sd.tol A positive number, warnings are printed if the standard deviation of any
 #' column is less than this threshold.
 #'
@@ -65,12 +66,12 @@
 #'
 #'
 
-pPCA <- function(x, rank, retX = TRUE, scale. = TRUE, sd.tol = 1e-5) {
+pPCA <- function(x, rank, retX = TRUE, scale. = TRUE, normalize = FALSE, sd.tol = 1e-5) {
 
   if(is.list(x))
-    result <- pca_list(x,rank,retX,scale.,sd.tol)
+    result <- pca_list(x,rank,retX,scale., normalize, sd.tol)
   else
-    result <- pca_matrix(x,rank,retX,scale.,sd.tol)
+    result <- pca_matrix(x,rank,retX,scale., normalize, sd.tol)
 
   return(result)
 }

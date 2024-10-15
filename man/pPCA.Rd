@@ -5,7 +5,7 @@
 \title{Performs a principal component analysis on a large sparse matrices or a list of large sparse
 matrices and returns the results as an object compatible to class prcomp}
 \usage{
-pPCA(x, rank, retX = TRUE, scale. = TRUE, sd.tol = 1e-05)
+pPCA(x, rank, retX = TRUE, scale. = TRUE, normalize = FALSE, sd.tol = 1e-05)
 }
 \arguments{
 \item{x}{A matrix, sparse matrix (Matrix::dgCMatrix), or a list of these. When a list
@@ -17,6 +17,8 @@ is supplied, the entries are concatenated horizontally (implicitly). See descrip
 
 \item{scale.}{A logical value indicating whether the variables should be scaled to have
 unit variance before the analysis takes place.}
+
+\item{normalize}{A logical value indicating whether the principal component scores should be normalized.}
 
 \item{sd.tol}{A positive number, warnings are printed if the standard deviation of any
 column is less than this threshold.}
