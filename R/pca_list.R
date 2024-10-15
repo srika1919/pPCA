@@ -75,7 +75,7 @@ pca_list <- function(lm, rank, retX = TRUE, scale. = TRUE, normalize = FALSE, sd
     sc = sqrt(n-1)*sds
 
   } else {
-    sc = FALSE
+    sc = rep(sqrt(n-1),p)
   }
 
   cm <- unlist(cm)
@@ -120,6 +120,7 @@ pca_list <- function(lm, rank, retX = TRUE, scale. = TRUE, normalize = FALSE, sd
     }
   }
 
+  result$nsample <- n
   class(result) <- c("pPCA","prcomp")
   return (result)
 }

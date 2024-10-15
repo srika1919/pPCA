@@ -11,7 +11,10 @@
 #' @return None.
 #' @export
 
-print.pPCA <- function(x, digits = 3, n = 3, scale. = TRUE, ...) {
+print.pPCA <- function(x, digits = 3, ...) {
+
+  n <- length(x$sdev)
+
   cat("\nPrincipal Component Analysis (pPCA) Results\n")
   cat("----------------------------------------------------\n")
 
@@ -19,14 +22,14 @@ print.pPCA <- function(x, digits = 3, n = 3, scale. = TRUE, ...) {
   cat("Number of components: ", length(x$sdev), "\n")
 
   # Calculate total variance based on scaling
-  if (scale.) {
+  if (x$scale[1]) {
     total_variance <- length(x$center)  # Total variance for scaled data (number of variables)
   } else {
-    total_variance <- sum((x$sds)^2)  # Total variance for unscaled data (sum of squared standard deviations)
+    total_variance <- sum(x$sds^2)  # Total variance for unscaled data (sum of squared standard deviations)
   }
 
   # Calculate variance explained by selected PCs
-  var_explained <- (x$sdev^2)  # Variance explained by each selected PC
+  var_explained <- x$sdev^2  # Variance explained by each selected PC
 
   # Proportion of variance explained relative to total variance
   proportion_total_var <- var_explained / total_variance
@@ -40,7 +43,7 @@ print.pPCA <- function(x, digits = 3, n = 3, scale. = TRUE, ...) {
   rownames(variance_matrix) <- paste0("PC", seq_along(x$sdev))
 
   # Print the variance explained matrix with respect to the total dataset variance
-  cat("\nVariance Explained by Principal Components (relative to entire dataset):\n")
+  cat("\nVariance Explained by PCs:\n")
   print(variance_matrix)
 
   # Print the first n rows and last 2 rows of PC scores with vertical dots
@@ -48,6 +51,7 @@ print.pPCA <- function(x, digits = 3, n = 3, scale. = TRUE, ...) {
     cat("\nPrincipal Component Scores (Preview):\n")
     top_rows <- head(x$x, n)
     bottom_rows <- tail(x$x, 2)
+
 
     # Print the top rows
     print(round(top_rows, digits), ...)

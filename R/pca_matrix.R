@@ -52,18 +52,19 @@ pca_matrix <- function(m, rank, retX = TRUE, scale. = TRUE, normalize = FALSE, s
     stop("Only base::matrix and Matrix::dgCMatrix matrices (or a list of these) are supported.")
   }
 
-  if(any(sds == 0))
-    stop("cannot rescale a constant/zero column to unit variance")
 
-  if(any(sds < sd.tol))
-    warning("Columns with very low sd (< ",sd.tol,") encountered. They should be removed",immediate. = T)
+
+
 
 
   if(scale.) {
+    if(any(sds == 0))
+      stop("cannot rescale a constant/zero column to unit variance")
+    if(any(sds < sd.tol))
+      warning("Columns with very low sd (< ",sd.tol,") encountered. They should be removed",immediate. = T)
     sc = sqrt(n-1)*sds
-
   } else {
-    sc = FALSE
+    sc = rep(sqrt(n-1),p)
   }
 
 
@@ -100,6 +101,7 @@ pca_matrix <- function(m, rank, retX = TRUE, scale. = TRUE, normalize = FALSE, s
     }
   }
 
+  result$nsample <- n
 
   class(result) <- c("pPCA","prcomp")
   return (result)
