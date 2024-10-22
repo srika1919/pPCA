@@ -4,16 +4,12 @@
 \alias{print.pPCA}
 \title{Print the Output of Principal Component Analysis (pPCA)}
 \usage{
-\method{print}{pPCA}(x, digits = 3, n = 3, scale. = TRUE, ...)
+\method{print}{pPCA}(x, digits = 3, ...)
 }
 \arguments{
 \item{x}{An object of class \code{pPCA} that contains the results of a partial principal component analysis.}
 
 \item{digits}{The number of decimal places to use in printing results such as variance explained and PC scores. Defaults to 3.}
-
-\item{n}{Number of rows to display from the start and end of the PC scores. Defaults to 3.}
-
-\item{scale.}{Logical value indicating whether scaling was applied during the PCA computation. Defaults to \code{TRUE}.}
 
 \item{\dots}{Further arguments passed to \code{print} for additional control over the output.}
 }

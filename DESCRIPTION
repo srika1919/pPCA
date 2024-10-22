@@ -1,8 +1,8 @@
 Package: pPCA
 Type: Package
 Title: Partial Principal Component Analysis of Partitioned Large Sparse Matrices
-Version: 1.0
-Date: 2024-10-08
+Version: 1.1
+Date: 2024-10-22
 Authors@R: c(
     person("Srika", "Raja", , "sri1919@iastate.edu", c("aut", "cre")),
     person("Somak", "Dutta", , "somakd@iastate.edu", "aut")
